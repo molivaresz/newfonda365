@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body { overflow-x: hidden; }
+
+.navbar {
+    background: #b99c9c;
+}
+
+.containerfooter {
+    background: #b99c9c;
+}
+
+.icono_perfil {
+    width: 35px;
+    height: 35px;
+}
+
+#InputEmail {
+    width: 20em;
+}
+
+#formGroupInputNombre, 
+#formGroupInputApellido, 
+#formGroupInputEmail, 
+#formGroupInputPassword, 
+#formGroupInputCiudad, 
+#formGroupSelectComuna, 
+#formGroupInputFechaNac {
+    width: 20em;
+}
+
+.carousel {
+    width: 400px;
+    height: 300px;
+}
+
+.galeriahome {
+    padding-top: 7em;
+}
+
+.imgcard {
+    width: 400px;
+    height: 400px;
+    padding: 1em;
+}
+.quienesSomos {
+    text-align: center;
+}
