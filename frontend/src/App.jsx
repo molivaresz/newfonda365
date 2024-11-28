@@ -9,6 +9,8 @@ import InfoDespacho from './views/InfoDespacho';
 import PreguntasFrecuentes from './views/PreguntasFrecuentes';
 import QuienesSomos from './views/QuienesSomos';
 import TerminosCondiciones from './views/TerminosCondiciones'
+import InicioRegistro from './views/InicioRegistro';
+import DetalleProducto from './views/DetalleProducto';
 
 
 function App() {
@@ -18,11 +20,14 @@ function App() {
     <Nbmenu />
     <Routes>
       <Route path="/" element={<Home />}/>
+      <Route path="/InicioRegistro" element={<InicioRegistro />}/>
+      <Route path="/DetalleProducto/:idproducto" element={<DetalleProducto />}/>1
       <Route path="/contacto" element={<Contacto />}/>
       <Route path="/informacionDespacho" element={<InfoDespacho />}/>
       <Route path="/preguntasFrecuentes" element={<PreguntasFrecuentes />}/>
       <Route path="/quienesSomos" element={<QuienesSomos />}/>
       <Route path="/terminosCondiciones" element={<TerminosCondiciones />}/>
+
     </Routes>
     <Footer />
     </>
