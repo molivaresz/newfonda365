@@ -11,6 +11,7 @@ const Fonda365ContextProvider = ({ children }) => {
     const [dataCategoria, setDataCategoria] = useState([])
     const [dataComentarios, setDataComentarios] = useState([])
     const [dataComunas, setDataComunas] = useState([])
+    const [dataSesion, setDataSesion] = useState([])
 
     
 
@@ -58,6 +59,51 @@ const Fonda365ContextProvider = ({ children }) => {
         }
     };
 
+    //USUARIOS
+    const crearUsuario = async (nombre,apellido,correo,password,ciudad,comuna,fechanac) => {
+        try {
+            axios
+            .post(FONDA365API_URL + "/usuario/registra_usuario", {"nombre": nombre, "apellido": apellido, "correo": correo, "password": password, "ciudad": ciudad, "comuna": comuna, "fechanacimiento":fechanac})
+            .then((response) => {
+                console.log(response.data);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const iniciarUsuario = async (correo,password) => {
+        let token = ""
+
+        axios
+        .post(FONDA365API_URL + "/usuario/login", {"correo": correo, "password": password})
+        .then((response) => {
+            if (response.status === 200) {
+                token = response.data;
+
+                autorizacionUsuario(token)
+            }
+        }).catch(error => {
+            const codigo = error.response.status
+            const mensaje = error.response.data.message
+            console.log('{"code":"' + codigo + '","message":"' + mensaje + '"}');
+        });
+    }; 
+
+    const autorizacionUsuario = async (token) => {
+        try {
+            axios
+            .get(FONDA365API_URL + "/usuarios", {
+                headers: {Authorization: `Bearer ${token}`}
+            })
+            .then((response) => {
+                setDataSesion(response.data)
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         getProductos()
         getCategorias()
@@ -69,7 +115,10 @@ const Fonda365ContextProvider = ({ children }) => {
         dataCategoria, setDataCategoria, 
         getComentariosxProducto, 
         dataComunas, setDataComunas, 
-        dataComentarios, setDataComentarios}}>
+        dataComentarios, setDataComentarios, 
+        crearUsuario, 
+        iniciarUsuario,
+        dataSesion}}>
             {children}
         </Fonda365Context.Provider>
     );
