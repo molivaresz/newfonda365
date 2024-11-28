@@ -1,5 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, Routes } from "react-router-dom";
 import Nbmenu from './components/nbmenu';
 import Home from './views/home';
 import Footer from './components/Footer';
