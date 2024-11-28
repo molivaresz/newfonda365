@@ -8,7 +8,7 @@ const CardProducto = (props) => {
 //    const {agregaPizza_a_carro} = useContext(PizzasContext)
 
     const hClick = (idproducto) => {
-        navigate(/DetalleProducto/${idproducto})
+        navigate(`/DetalleProducto/${idproducto}`)
     }
 
     return (

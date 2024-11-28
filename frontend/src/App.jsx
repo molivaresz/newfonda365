@@ -1,6 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from "react-router-dom";
+import Fonda365ContextProvider from './context/Fonda365ContextProvider';
 import Nbmenu from './components/nbmenu';
 import Home from './views/home';
 import Footer from './components/Footer';
@@ -18,19 +19,21 @@ function App() {
 
   return (
     <>
-    <Nbmenu />
-    <Routes>
-      <Route path="/" element={<Home />}/>
-      <Route path="/InicioRegistro" element={<InicioRegistro />}/>
-      <Route path="/DetalleProducto/:idproducto" element={<DetalleProducto />}/>1
-      <Route path="/contacto" element={<Contacto />}/>
-      <Route path="/informacionDespacho" element={<InfoDespacho />}/>
-      <Route path="/preguntasFrecuentes" element={<PreguntasFrecuentes />}/>
-      <Route path="/quienesSomos" element={<QuienesSomos />}/>
-      <Route path="/terminosCondiciones" element={<TerminosCondiciones />}/>
-      <Route path="/ProductoCategoria/:idcategoria" element={<ProductoCategoria />}/>
-    </Routes>
-    <Footer />
+      <Fonda365ContextProvider>
+        <Nbmenu />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/InicioRegistro" element={<InicioRegistro />}/>
+          <Route path="/DetalleProducto/:idproducto" element={<DetalleProducto />}/>1
+          <Route path="/contacto" element={<Contacto />}/>
+          <Route path="/informacionDespacho" element={<InfoDespacho />}/>
+          <Route path="/preguntasFrecuentes" element={<PreguntasFrecuentes />}/>
+          <Route path="/quienesSomos" element={<QuienesSomos />}/>
+          <Route path="/terminosCondiciones" element={<TerminosCondiciones />}/>
+          <Route path="/ProductoCategoria/:idcategoria" element={<ProductoCategoria />}/>
+        </Routes>
+        <Footer />
+      </Fonda365ContextProvider>    
     </>
   )
 }
