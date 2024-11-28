@@ -11,6 +11,7 @@ import QuienesSomos from './views/QuienesSomos';
 import TerminosCondiciones from './views/TerminosCondiciones'
 import InicioRegistro from './views/InicioRegistro';
 import DetalleProducto from './views/DetalleProducto';
+import ProductoCategoria from './views/ProductoCategoria';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
       <Route path="/preguntasFrecuentes" element={<PreguntasFrecuentes />}/>
       <Route path="/quienesSomos" element={<QuienesSomos />}/>
       <Route path="/terminosCondiciones" element={<TerminosCondiciones />}/>
-
+      <Route path="/ProductoCategoria/:idcategoria" element={<ProductoCategoria />}/>
     </Routes>
     <Footer />
     </>
