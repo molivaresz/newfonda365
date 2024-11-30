@@ -13,19 +13,15 @@ const Fonda365ContextProvider = ({ children }) => {
     const [dataComunas, setDataComunas] = useState([])
     const [dataSesion, setDataSesion] = useState([])
 
-    
 
     //PRODUCTOS
     const getProductos = async () => {
-        try {
-            axios.get(FONDA365API_URL + "/producto/obtener_producto").then((response) => {
-                setDataProducto(response.data);    
-            });
-        } catch (error) {
-            console.log(error);
-        }
+            const res = await fetch("/productos.json");
+            const productos = await res.json();
+            setDataProducto(productos);
     };
 
+    
     const getCategorias = async () => {
         try {
             axios.get(FONDA365API_URL + "/fonda365/categorias").then((response) => {
