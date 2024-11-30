@@ -39,7 +39,7 @@ const Footer = () => {
         </footer>
         <div className="d-flex flex-column flex-sm-row justify-content-between border-top">
                 <p className='px-2'>Copyright &copy; 2024</p>
-                <p className='px-2'>Desarrollado por ROLMAX</p>
+                <p className='px-2'>Desarrollado por RFM</p>
         </div>
     </div>
     </>    

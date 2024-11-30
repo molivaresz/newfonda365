@@ -46,12 +46,18 @@ const Nbmenu = () => {
                 </div>
                 <div className="container-fluid d-flex justify-content-center">
                     <div className="btn-group" role="group" aria-label="Default button group">
-                        {
+                        <button type="button" className="btn btn-outline-dark"><b>Cerveza</b></button>
+                        <button type="button" className="btn btn-outline-dark"><b>Whisky</b></button>
+                        <button type="button" className="btn btn-outline-dark"><b>Ron</b></button>
+                        <button type="button" className="btn btn-outline-dark"><b>Vino</b></button>
+                        <button type="button" className="btn btn-outline-dark"><b>Tequila</b></button>
+
+                        {/* {
                             dataCategoria  &&
                             dataCategoria.map((dataCatego,index) => (
                                 <button key={index} type="button" onClick={() => hClick(dataCatego.Id_Categoria)} className="btn btn-outline-dark"><b>{dataCatego.Categoria}</b></button>
                             ))
-                        }
+                        } */}
                     </div>
                 </div>
             </nav>
