@@ -51,13 +51,6 @@ const Nbmenu = () => {
                         <button type="button" className="btn btn-outline-dark"><b>Ron</b></button>
                         <button type="button" className="btn btn-outline-dark"><b>Vino</b></button>
                         <button type="button" className="btn btn-outline-dark"><b>Tequila</b></button>
-
-                        {/* {
-                            dataCategoria  &&
-                            dataCategoria.map((dataCatego,index) => (
-                                <button key={index} type="button" onClick={() => hClick(dataCatego.Id_Categoria)} className="btn btn-outline-dark"><b>{dataCatego.Categoria}</b></button>
-                            ))
-                        } */}
                     </div>
                 </div>
             </nav>

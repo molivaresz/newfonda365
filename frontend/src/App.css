@@ -38,6 +38,11 @@ html, body { overflow-x: hidden; }
     height: 300px;
 }
 
+.imgcarouselitem {
+    width: 20em;
+    height: 20em;
+}
+
 .galeriahome {
     padding-top: 7em;
 }

@@ -9,21 +9,32 @@ const Banner = () => {
     return (
         <>
         <div className="container-fluid d-flex justify-content-center">
-            <div id="carouselSlidesOnly" className="carousel slide" data-bs-ride="carousel">
+            <div id="carouselSlidesOnly" className="carousel slide pt-5" data-bs-ride="carousel">
                 <div className="carousel-inner">
-                {    
-                        dataProducto &&
-                        dataProducto.map((dataProd,index) => (
-                            index == 0 ? (
-                                <div key={index} className="carousel-item active">
-                                    <img key={index} src={dataProd.Imagen} className="d-block w-100" alt="..." />
-                                </div>
-                            )
-                            :   <div key={index} className="carousel-item">
-                                    <img key={index} src={dataProd.Imagen} className="d-block w-100" alt="..." />
-                                </div>
-                        ))
-                    }
+                    <div className="carousel-item active">
+                        <img src="src\assets\imgproducto\cerveza1.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                         <img src="src\assets\imgproducto\cerveza2.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                         <img src="src\assets\imgproducto\ron1.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                         <img src="src\assets\imgproducto\ron2.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                         <img src="src\assets\imgproducto\vinocd1.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                         <img src="src\assets\imgproducto\vinotarapaca.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                         <img src="src\assets\imgproducto\whisky.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
+                    <div className="carousel-item">
+                         <img src="src\assets\imgproducto\whisky1.jpg" className="d-block imgcarouselitem" alt="..." />
+                    </div>
                 </div>
             </div>
         </div>
