@@ -13,7 +13,7 @@ const Home = () => {
     <>
     <Banner/>
     <div className="galeriahome container-fluid">
-    <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+    <div className="row row-cols-2 row-cols-lg-4">
     {
       dataProducto && 
       dataProducto.map((dataProd,index) => (

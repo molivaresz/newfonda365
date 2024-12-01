@@ -4,14 +4,25 @@
     box-sizing: border-box;
 }
 
-html, body { overflow-x: hidden; }
+html, body { 
+    overflow-x: hidden; 
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6); background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+}
 
 .navbar {
-    background: #b99c9c;
+    /*background: #b99c9c;*/
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
 
 .containerfooter {
-    background: #b99c9c;
+    background: #005AA7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .icono_perfil {
@@ -47,11 +58,23 @@ html, body { overflow-x: hidden; }
     padding-top: 7em;
 }
 
-.imgcard {
-    width: 400px;
-    height: 400px;
+.card-text {
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.btn-card {
+    text-align: center;
+    border-top: 1px solid black;
+}
+
+.card-img-top {
+    width: 10em;
+    height: 20em;
     padding: 1em;
 }
+
 .quienesSomos {
     text-align: center;
 }
