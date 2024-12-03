@@ -82,4 +82,14 @@ const verificarCredenciales = async (correo, password) => {
         throw { code: 401, message: "contraseña incorrecta" }
     }
 }
-module.exports = { getCategorias, getProductos, comentarios_x_producto, getComunas, registraUsuario, verificarCredenciales}
+
+const obtenerUsuarios = async (correo) => {
+    const values = [correo]
+    const consulta = 'SELECT "Nombre", "Apellido","Ciudad", "Id_Comuna", "Imagen_Perfil", "Id_Perfil" FROM usuario WHERE "Activo" = true and "Correo" = $1'
+    const {rows: [usuario], rowCount } = await pool.query(consulta, values)
+    if (rowCount === 0) throw { code: 404, message: "No existe registro usuario con el email ingresado" }
+
+    return usuario
+}
+
+module.exports = { getCategorias, getProductos, comentarios_x_producto, getComunas, registraUsuario, verificarCredenciales, obtenerUsuarios}
