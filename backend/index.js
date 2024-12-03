@@ -5,7 +5,7 @@ require('dotenv').config()
 const cors = require('cors')
 
 
-const { getCategorias, getProductos, comentarios_x_producto, getComunas, registraUsuario} = require('./consultas')
+const { getCategorias, getProductos, comentarios_x_producto, getComunas, registraUsuario, verificarCredenciales} = require('./consultas')
 
 app.listen(process.env.PORT, console.log(`SERVIDOR ENCENDIDO EN PUERTO ${process.env.PORT}`))
 app.use(express.json())
@@ -57,6 +57,17 @@ app.post("/usuario/registra_usuario", async (req, res) => {
         if (usuarioregistrado == "OK") {
             res.status(201).json({ message: 'Usuario creado exitosamente' })
         }
+    } catch (error) {
+        res.status(error.code || 500).send(error)
+    }
+})
+
+app.post("/usuario/login", validaExistenciaCredenciales, async (req, res) => {
+    try {
+        const { correo, password } = req.body
+        await verificarCredenciales(correo, password)
+        const token = jwt.sign({ correo }, process.env.SECRET_KEY)
+        res.send(token)
     } catch (error) {
         res.status(error.code || 500).send(error)
     }
