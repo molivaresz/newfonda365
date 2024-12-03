@@ -24,4 +24,22 @@ const getProductos = async () => {
     return productos
 }
 
-module.exports = { getCategorias, getProductos}
+const comentarios_x_producto = async (payload) => {
+    let { idproducto } = payload
+    const values = [idproducto]
+    const consulta = 'SELECT * FROM comentarios where "Id_Producto" = $1;'
+    const result = await pool.query(consulta, values)
+
+    if (result.rowCount === 0) {
+        throw {code: 404, message: "No se encontró resultados"}
+    }
+
+    return result.rows
+}
+
+const getComunas = async () => {
+    const { rows: comunas } = await pool.query("SELECT * FROM Comuna")
+    return comunas
+}
+
+module.exports = { getCategorias, getProductos, comentarios_x_producto, getComunas}
