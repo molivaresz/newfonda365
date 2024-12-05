@@ -90,3 +90,5 @@ app.get("/usuario/autorizacion_usuario", verificacionToken, async (req, res) => 
 app.get("*", (req, res) => {
     res.status(404).send("Esta ruta no existe")
 })
+
+module.exports = app;
