@@ -1,0 +1,9 @@
+const validaExistenciaCredenciales = (req, res, next) => {
+    const { correo, password } = req.body
+    if (correo == "" || password == "") {
+        return res.status(401).send({ code: "401", message: "No se obtuvieron email/password de la consulta" })
+    }
+    next()
+}
+
+module.exports = { validaExistenciaCredenciales }
