@@ -6,12 +6,12 @@ const cors = require('cors')
 
 
 const { getCategorias, getProductos, comentarios_x_producto, getComunas, registraUsuario, verificarCredenciales, obtenerUsuarios} = require('./consultas')
-const { validaExistenciaCredenciales } = require('./middleware/fonda365Middleware')
+const { validaExistenciaCredenciales, verificacionToken, logger } = require('./middleware/fonda365Middleware')
 
 app.listen(process.env.PORT, console.log(`SERVIDOR ENCENDIDO EN PUERTO ${process.env.PORT}`))
 app.use(express.json())
 app.use(cors())
-
+app.use(logger)
 
 //PRODUCTOS
 app.get("/fonda365/categorias", async (req, res) => {
