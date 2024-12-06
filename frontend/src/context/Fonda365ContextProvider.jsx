@@ -16,9 +16,14 @@ const Fonda365ContextProvider = ({ children }) => {
 
     //PRODUCTOS
     const getProductos = async () => {
-            const res = await fetch("/productos.json");
-            const productos = await res.json();
-            setDataProducto(productos);
+        try {
+            axios.get(FONDA365API_URL + "/producto/obtener_producto").then((response) => {
+                setDataProducto(response.data); 
+                console.log("dataProducto: " + dataProducto)
+            });
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     
