@@ -55,7 +55,7 @@ const registraUsuario = async (payload) => {
         const values2 = [nombre, apellido, correo, ciudad, comuna, fechanacimiento, '', 2, password, true]
         const consulta2 = "INSERT INTO Usuario VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)"
         pool.query(consulta2, values2, error => {
-            if (error) throw {code: 406, message: error.error};
+            if (error) throw {code: 406, message: error.message};
         })    
     } else {
         throw {code: 409, message: "Usuario se encuentra creado, no es posible crear nuevamente"}

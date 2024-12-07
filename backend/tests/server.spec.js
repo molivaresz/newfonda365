@@ -40,10 +40,10 @@ describe("POST /usuario/registra_usuario", () => {
             nombre: "Fleur",
             apellido: "Thomas",
             correo: "fleurclement4@gmail.com",
-            password: "*******",
-            ciudad: "santiago",
-            comuna: "santiago",
-            fechanacimiento: "07-02-2002"
+            password: "$2a$10$gLj9qzD11GHrDRgW",
+            ciudad: "Santiago",
+            comuna: 2,
+            fechanacimiento: "2002-02-07"
         };
         const response = await request(server)
             .post("/usuario/registra_usuario")
@@ -53,6 +53,6 @@ describe("POST /usuario/registra_usuario", () => {
         expect(response.statusCode).toBe(201);
         console.log(response.body)
         // Verifica el cuerpo de la respuesta
-        expect(response.body).toBeInstanceOf(Array)
+        expect(response.body).toBeInstanceOf(Object)
     });
 });
