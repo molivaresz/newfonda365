@@ -33,3 +33,26 @@ describe("GET /producto/obtener_producto", () => {
         expect(body).toBeInstanceOf(Array);
     });
 });
+
+describe("POST /usuario/registra_usuario", () => {
+    it("Debería retornar un 201 y los Usuarios creados exitosamente", async () => {
+        const payload = {
+            nombre: "Fleur",
+            apellido: "Thomas",
+            correo: "fleurclement4@gmail.com",
+            password: "*******",
+            ciudad: "santiago",
+            comuna: "santiago",
+            fechanacimiento: "07-02-2002"
+        };
+        const response = await request(server)
+            .post("/usuario/registra_usuario")
+            .send(payload);
+
+        // Verifica el status
+        expect(response.statusCode).toBe(201);
+        console.log(response.body)
+        // Verifica el cuerpo de la respuesta
+        expect(response.body).toBeInstanceOf(Array)
+    });
+});
