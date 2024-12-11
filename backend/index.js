@@ -1,5 +1,6 @@
 const express = require ('express')
 const app = express()
+const path = require("path");
 const jwt = require("jsonwebtoken")
 require('dotenv').config()
 const cors = require('cors')
@@ -12,6 +13,8 @@ app.listen(process.env.PORT, console.log(`SERVIDOR ENCENDIDO EN PUERTO ${process
 app.use(express.json())
 app.use(cors())
 app.use(logger)
+
+app.use(express.static(path.join(__dirname, "public")));
 
 //PRODUCTOS
 app.get("/fonda365/categorias", async (req, res) => {
@@ -87,8 +90,15 @@ app.get("/usuario/autorizacion_usuario", verificacionToken, async (req, res) => 
     }
 })
 
+// Redirigir cualquier ruta desconocida al frontend
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+    });
+
+  /*
 app.get("*", (req, res) => {
     res.status(404).send("Esta ruta no existe")
 })
+*/
 
 module.exports = app;

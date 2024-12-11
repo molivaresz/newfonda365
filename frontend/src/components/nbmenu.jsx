@@ -20,7 +20,7 @@ const Nbmenu = () => {
             <nav className="navbar">
                 <div className="container-fluid d-flex justify-content-around">
                     <Link className="navbar-brand" to="/">
-                        <img src="src\assets\logofonda365.png" alt="Logo" width="200" height="104" className="d-inline-block align-text-top" />
+                        <img src="assets\logofonda365.png" alt="Logo" width="200" height="104" className="d-inline-block align-text-top" />
                     </Link>
                     <form className="d-flex" role="search">
                         <input className="form-control me-2" type="search" placeholder="Producto" aria-label="Search" />
@@ -29,7 +29,7 @@ const Nbmenu = () => {
                         <button className="btn btn-success" type="submit">Buscar</button>
                     </form>
                     <div className="d-flex flex-column justify-content-end align-items-center">
-                        <Link className="icono_perfil d-flex align-items-center" to="/InicioRegistro"><img src="src\assets\person.svg" /></Link> 
+                        <Link className="icono_perfil d-flex align-items-center" to="/InicioRegistro"><img src="assets\person.svg" /></Link> 
                         <div className="dropdown">
                         {    
                             dataSesion &&

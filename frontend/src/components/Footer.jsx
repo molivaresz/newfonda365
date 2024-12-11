@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="containerfooter">
         <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-5 border-top">
             <div className="col my-5">
-                <img src="src\assets\logofonda365.png" alt="Logo" width="200" height="104" className="d-inline-block align-text-top" />
+                <img src="assets\logofonda365.png" alt="Logo" width="200" height="104" className="d-inline-block align-text-top" />
             </div>
 
             <div className="col my-5"></div>
