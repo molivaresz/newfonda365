@@ -3,7 +3,6 @@ import axios from "axios";
 
 export const Fonda365Context = createContext();
 
-//const PRODUCTOS_URL = "/productos.json";
 const FONDA365API_URL = "https://newfonda365.onrender.com";
 
 const Fonda365ContextProvider = ({ children }) => {
@@ -25,7 +24,6 @@ const Fonda365ContextProvider = ({ children }) => {
             console.log(error);
         }
     };
-
     
     const getCategorias = async () => {
         try {
