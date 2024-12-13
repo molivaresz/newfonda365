@@ -92,7 +92,7 @@ const Fonda365ContextProvider = ({ children }) => {
     const autorizacionUsuario = async (token) => {
         try {
             axios
-            .get(FONDA365API_URL + "/usuarios", {
+            .get(FONDA365API_URL + "/usuario/autorizacion_usuario", {
                 headers: {Authorization: `Bearer ${token}`}
             })
             .then((response) => {
