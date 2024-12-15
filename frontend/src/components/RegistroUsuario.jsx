@@ -9,16 +9,30 @@ const RegistroUsuario = () => {
     const hClickcrearUsuario = (nombre,apellido,correo,password,ciudad,comuna,fechanac) => {
         crearUsuario(nombre,apellido,correo,password,ciudad,comuna,fechanac)
         {
-            <div className="alert alert-success" role="alert">
-                "hola este es un mensaje"
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div className="toast-header">
+                        <strong className="me-auto">NewFonda365</strong>
+                        <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div className="toast-body">
+                        Hello, world! This is a toast message.
+                    </div>
+                </div>
             </div>
+
+       //     <div className="alert alert-success" role="alert">
+       //         "hola este es un mensaje"
+       //     </div>
 
         
             dataMsgRegistraUsuario &&
             dataMsgRegistraUsuario.map((dataMsgRegUsuario,index) => (
-                <div key={"mru" + index} className="alert alert-success" role="alert">
-                    {dataMsgRegUsuario.message}
-                </div>
+                <p>{ dataMsgRegUsuario.message }</p>
+
+                //<div key={"mru" + index} className="alert alert-success" role="alert">
+                //    {dataMsgRegUsuario.message}
+                //</div>
             ))
         }
     }
