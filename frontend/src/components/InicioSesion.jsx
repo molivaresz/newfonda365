@@ -1,14 +1,17 @@
 import React from 'react'
 import { useContext } from 'react';
 import { Fonda365Context } from '../context/Fonda365ContextProvider';
+import { useNavigate } from 'react-router';
 
 const InicioSesion = () => {
 
     const {iniciarUsuario,dataSesion} = useContext(Fonda365Context)
 
+    const navigate = useNavigate()
+
     const hClickinisession = (correo,password) => {
         iniciarUsuario(correo,password)
-        dataSesion != "" ? navigate('/') : null
+        dataSesion ? navigate("/") : null
     }
 
     return (
