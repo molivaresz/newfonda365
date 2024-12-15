@@ -8,7 +8,7 @@ const InicioSesion = () => {
 
     const hClickinisession = (correo,password) => {
         iniciarUsuario(correo,password)
-        dataSesion ? navigate('/') : null
+        dataSesion != "" ? navigate('/') : null
     }
 
     return (
