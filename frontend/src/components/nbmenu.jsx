@@ -6,12 +6,17 @@ import { useNavigate } from 'react-router';
 
 const Nbmenu = () => {
 
-    const {dataCategoria, dataSesion} = useContext(Fonda365Context)
+    const {dataCategoria, dataSesion, setDataSesion} = useContext(Fonda365Context)
     
     const navigate = useNavigate()
 
     const hClick = (idcategoria) => {
         navigate(`/ProductoCategoria/${idcategoria}`)
+    }
+
+    const hClickcerrarsession = () => {
+        setDataSesion([])
+        !dataSesion ? navigate("/") : null
     }
 
     return (
@@ -36,9 +41,9 @@ const Nbmenu = () => {
                             dataSesion.map((dataSesionUsuario,index) => (
                                 <button key={index} className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{dataSesionUsuario.Nombre} {dataSesionUsuario.Apellido}</button>
                             ))
-                        }                                
+                        }
                             <ul className="dropdown-menu dropdown-menu-dark">
-                                <li><a className="dropdown-item" href="#">Cerrar Sesión</a></li>
+                                <li><button type="button" onClick={() => hClickcerrarsession()} className="btn btn-secondary dropdown-item">Cerrar Sesión</button></li>
                             </ul>
                         </div>
                     </div>

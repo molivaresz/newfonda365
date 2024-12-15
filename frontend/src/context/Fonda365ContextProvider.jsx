@@ -117,7 +117,7 @@ const Fonda365ContextProvider = ({ children }) => {
         dataComentarios, setDataComentarios, 
         crearUsuario, 
         iniciarUsuario,
-        dataSesion}}>
+        dataSesion, setDataSesion}}>
             {children}
         </Fonda365Context.Provider>
     );
