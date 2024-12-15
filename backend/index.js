@@ -11,7 +11,11 @@ const { validaExistenciaCredenciales, verificacionToken, logger } = require('./m
 
 app.listen(process.env.PORT, console.log(`SERVIDOR ENCENDIDO EN PUERTO ${process.env.PORT}`))
 app.use(express.json())
-app.use(cors())
+const corsOptions = {
+    origin: 'https://newfonda365.onrender.com/',
+    methods: 'GET,POST',
+};
+app.use(cors(corsOptions));
 app.use(logger)
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -94,11 +98,5 @@ app.get("/usuario/autorizacion_usuario", verificacionToken, async (req, res) => 
 app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
     });
-
-  /*
-app.get("*", (req, res) => {
-    res.status(404).send("Esta ruta no existe")
-})
-*/
 
 module.exports = app;

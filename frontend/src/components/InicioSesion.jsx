@@ -4,7 +4,12 @@ import { Fonda365Context } from '../context/Fonda365ContextProvider';
 
 const InicioSesion = () => {
 
-    const {iniciarUsuario} = useContext(Fonda365Context)
+    const {iniciarUsuario,dataSesion} = useContext(Fonda365Context)
+
+    const hClickinisession = (correo,password) => {
+        iniciarUsuario(correo,password)
+        dataSesion ? navigate('/') : null
+    }
 
     return (
         <div className='container-fluid d-flex pt-5 ps-5'>
@@ -17,7 +22,7 @@ const InicioSesion = () => {
                     <label className="form-label">Contraseña</label>
                     <input type="password" className="form-control" id="InputPassword" />
                 </div>
-                <button type="button" onClick={() => iniciarUsuario(document.getElementById("InputEmail").value,
+                <button type="button" onClick={() => hClickinisession(document.getElementById("InputEmail").value,
                 document.getElementById("InputPassword").value)} className="btn btn-secondary">Ingresar</button>
             </form>
         </div>

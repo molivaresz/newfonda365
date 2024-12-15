@@ -4,7 +4,7 @@ const QuienesSomos = () => {
     return (
         <div>
             <div className= "d-flex justify-content-center p-5">
-                <img src="src\assets\logofonda365.png" alt="Logo" width="250" height="154" className="d-inline-block align-text-top" />
+                <img src="assets\logofonda365.png" alt="Logo" width="250" height="154" className="d-inline-block align-text-top" />
             </div>
             <div className='quienesSomos'>
                 <p className='p-2'>

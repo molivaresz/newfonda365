@@ -17,7 +17,6 @@ const Footer = () => {
                 <ul className="nav flex-column">
                     <li className="nav-item mb-2"><Link className="nav-link p-0 text-muted" to="/">Inicio</Link></li>
                     <li className="nav-item mb-2"><Link className="nav-link p-0 text-muted" to="/quienesSomos">Quienes Somos</Link></li>
-                    <li className="nav-item mb-2"><a href="#" className="nav-link p-0 text-muted">Mi Cuenta</a></li>
                     <li className="nav-item mb-2"><Link className="nav-link p-0 text-muted" to="/contacto">Contacto</Link></li>
                 </ul>
             </div>
