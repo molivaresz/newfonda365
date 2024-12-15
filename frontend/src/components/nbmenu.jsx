@@ -35,17 +35,17 @@ const Nbmenu = () => {
                     </form>
                     <div className="d-flex flex-column justify-content-end align-items-center">
                         <Link className="icono_perfil d-flex align-items-center" to="/InicioRegistro"><img src="assets\person.svg" /></Link> 
-                        <div className="dropdown">
                         {    
                             dataSesion &&
                             dataSesion.map((dataSesionUsuario,index) => (
-                                <button key={index} className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{dataSesionUsuario.Nombre} {dataSesionUsuario.Apellido}</button>
+                                <div className="dropdown">
+                                    <button key={index} className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">{dataSesionUsuario.Nombre} {dataSesionUsuario.Apellido}</button>
+                                    <ul className="dropdown-menu dropdown-menu-dark">
+                                        <li><button type="button" onClick={() => hClickcerrarsession()} className="btn btn-secondary dropdown-item">Cerrar Sesión</button></li>
+                                    </ul>
+                                </div>
                             ))
                         }
-                            <ul className="dropdown-menu dropdown-menu-dark">
-                                <li><button type="button" onClick={() => hClickcerrarsession()} className="btn btn-secondary dropdown-item">Cerrar Sesión</button></li>
-                            </ul>
-                        </div>
                     </div>
 
                 </div>
