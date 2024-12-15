@@ -9,6 +9,11 @@ const RegistroUsuario = () => {
     const hClickcrearUsuario = (nombre,apellido,correo,password,ciudad,comuna,fechanac) => {
         crearUsuario(nombre,apellido,correo,password,ciudad,comuna,fechanac)
         {
+            <div className="alert alert-success" role="alert">
+                "hola este es un mensaje"
+            </div>
+
+        
             dataMsgRegistraUsuario &&
             dataMsgRegistraUsuario.map((dataMsgRegUsuario,index) => (
                 <div key={"mru" + index} className="alert alert-success" role="alert">
