@@ -11,7 +11,7 @@ const Fonda365ContextProvider = ({ children }) => {
     const [dataComentarios, setDataComentarios] = useState([])
     const [dataComunas, setDataComunas] = useState([])
     const [dataSesion, setDataSesion] = useState([])
-    const [dataMsgRegistraUsuario,setdataMsgRegistraUsuario] = useState(false)
+    const [dataMsgRegistraUsuario,setdataMsgRegistraUsuario] = useState([])
 
 
     //PRODUCTOS
