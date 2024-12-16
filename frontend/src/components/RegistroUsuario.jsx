@@ -9,20 +9,9 @@ const RegistroUsuario = () => {
     const hClickcrearUsuario = (nombre,apellido,correo,password,ciudad,comuna,fechanac) => {
         crearUsuario(nombre,apellido,correo,password,ciudad,comuna,fechanac)
         {
-            alert('Ocurrió un error al registrar el usuario.');
-
-       //     <div className="alert alert-success" role="alert">
-       //         "hola este es un mensaje"
-       //     </div>
-
-        
             dataMsgRegistraUsuario &&
             dataMsgRegistraUsuario.map((dataMsgRegUsuario,index) => (
-                <p>{ dataMsgRegUsuario.message }</p>
-
-                //<div key={"mru" + index} className="alert alert-success" role="alert">
-                //    {dataMsgRegUsuario.message}
-                //</div>
+                alert({ dataMsgRegUsuario })
             ))
         }
     }
