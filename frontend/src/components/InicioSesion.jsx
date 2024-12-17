@@ -15,7 +15,7 @@ const InicioSesion = () => {
     }
 
     return (
-        <div className='container-fluid d-flex pt-5 ps-5'>
+        <div className='col container-fluid d-flex pt-5 ps-5'>
             <form>
                 <div className="mb-3">
                     <label className="form-label">Correo Electrónico</label>

@@ -6,7 +6,7 @@ import InicioSesion from '../components/InicioSesion'
 const InicioRegistro = () => {
   return (
     <>
-    <div className='container-fluid d-flex justify-content-evenly bg-secondary bg-opacity-10'>
+    <div className='row row-cols-1 row-cols-lg-2 container-fluid d-flex justify-content-evenly bg-secondary bg-opacity-10'>
         <InicioSesion />
         <RegistroUsuario />
     </div>

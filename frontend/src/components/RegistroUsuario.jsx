@@ -7,7 +7,7 @@ const RegistroUsuario = () => {
     const {crearUsuario, dataComunas} = useContext(Fonda365Context)
 
     return (
-    <div className='container-fluid d-flex flex-column py-5'>
+    <div className='col container-fluid d-flex flex-column py-5'>
         <form>
             <div className="mb-3">
                 <label className="form-label">Nombre:</label>
