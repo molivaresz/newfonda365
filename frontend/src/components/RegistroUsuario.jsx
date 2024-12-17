@@ -10,9 +10,12 @@ const RegistroUsuario = () => {
     const hClickcrearUsuario = (nombre,apellido,correo,password,ciudad,comuna,fechanac) => {
         crearUsuario(nombre,apellido,correo,password,ciudad,comuna,fechanac)
         alert(dataResultRegUsuario)
+        {
+            console.log('muestra: ' + dataResultRegUsuario)
+        }
     }
 
-    
+
     return (
     <div className='col container-fluid d-flex flex-column py-5'>
         <form>
