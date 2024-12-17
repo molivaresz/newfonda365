@@ -11,7 +11,6 @@ const Fonda365ContextProvider = ({ children }) => {
     const [dataComentarios, setDataComentarios] = useState([])
     const [dataComunas, setDataComunas] = useState([])
     const [dataSesion, setDataSesion] = useState([])
-    const [dataResultRegUsuario, setDataResultRegUsuario] = useState('')
 
     //PRODUCTOS
     const getProductos = async () => {
@@ -64,7 +63,7 @@ const Fonda365ContextProvider = ({ children }) => {
             axios
             .post(FONDA365API_URL + "/usuario/registra_usuario", {"nombre": nombre, "apellido": apellido, "correo": correo, "password": password, "ciudad": ciudad, "comuna": comuna, "fechanacimiento":fechanac})
             .then((response) => {
-                setDataResultRegUsuario(response.data.message)
+                console.log(response.data.message)
                 console.log(response.data)
             });
         } catch (error) {
@@ -118,8 +117,7 @@ const Fonda365ContextProvider = ({ children }) => {
         dataComentarios, setDataComentarios, 
         crearUsuario, 
         iniciarUsuario,
-        dataSesion, setDataSesion,
-        dataResultRegUsuario}}>
+        dataSesion, setDataSesion}}>
             {children}
         </Fonda365Context.Provider>
     );
