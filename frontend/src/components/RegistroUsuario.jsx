@@ -4,8 +4,15 @@ import { Fonda365Context } from '../context/Fonda365ContextProvider';
 
 const RegistroUsuario = () => {
 
-    const {crearUsuario, dataComunas} = useContext(Fonda365Context)
+    const {crearUsuario, dataComunas, dataResultRegUsuario} = useContext(Fonda365Context)
 
+
+    const hClickcrearUsuario = (nombre,apellido,correo,password,ciudad,comuna,fechanac) => {
+        crearUsuario(nombre,apellido,correo,password,ciudad,comuna,fechanac)
+        alert(dataResultRegUsuario)
+    }
+
+    
     return (
     <div className='col container-fluid d-flex flex-column py-5'>
         <form>
@@ -44,7 +51,7 @@ const RegistroUsuario = () => {
                 <label className="form-label">Fecha Nacimiento:</label>
                 <input type="date" className="form-control" id="formGroupInputFechaNac" />
             </div>  
-            <button type="button" onClick={() => crearUsuario(document.getElementById("formGroupInputNombre").value,
+            <button type="button" onClick={() => hClickcrearUsuario(document.getElementById("formGroupInputNombre").value,
                 document.getElementById("formGroupInputApellido").value,
                 document.getElementById("formGroupInputEmail").value,
                 document.getElementById("formGroupInputPassword").value,
