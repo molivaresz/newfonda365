@@ -63,7 +63,7 @@ const Fonda365ContextProvider = ({ children }) => {
             axios
             .post(FONDA365API_URL + "/usuario/registra_usuario", {"nombre": nombre, "apellido": apellido, "correo": correo, "password": password, "ciudad": ciudad, "comuna": comuna, "fechanacimiento":fechanac})
             .then((response) => {
-                console.log(response.message);
+                console.log(response.data.message);
             });
         } catch (error) {
             console.log(error);
