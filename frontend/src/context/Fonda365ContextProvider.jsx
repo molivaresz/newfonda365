@@ -102,7 +102,7 @@ const Fonda365ContextProvider = ({ children }) => {
             .then((response) => {
                 setDataSesion(response.data)
                 console.log(response.data)
-                const resultadoData = response.data
+                const resultadoData = JSON.parse(response.data)
                 resultadoData.map((recorre) => {
                     console.log("code: " + recorre.code)
                     console.log("message: " + recorre.message)
