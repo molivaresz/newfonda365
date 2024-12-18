@@ -65,6 +65,7 @@ const Fonda365ContextProvider = ({ children }) => {
             .then((response) => {
                 console.log(response.data.message)
                 console.log(response.data)
+                alert(response.data.message)
             });
         } catch (error) {
             console.log(error);
