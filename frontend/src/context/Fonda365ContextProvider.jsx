@@ -104,6 +104,8 @@ const Fonda365ContextProvider = ({ children }) => {
                 console.log(response.data)
                 const resultadoData = response.data
                 resultadoData.map((recorre) => {
+                    console.log("code: " + recorre.code)
+                    console.log("message: " + recorre.message)
                     if (recorre.code == "401") {
                         alert(recorre.message)
                     } else {
