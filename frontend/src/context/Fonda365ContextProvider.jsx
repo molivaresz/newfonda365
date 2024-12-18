@@ -98,6 +98,9 @@ const Fonda365ContextProvider = ({ children }) => {
             })
             .then((response) => {
                 setDataSesion(response.data)
+                console.log(response.data.status)
+                console.log(response.data.message)
+                
             });
         } catch (error) {
             console.log(error);
