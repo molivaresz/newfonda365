@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState} from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router';
 
 export const Fonda365Context = createContext();
 
@@ -11,6 +12,8 @@ const Fonda365ContextProvider = ({ children }) => {
     const [dataComentarios, setDataComentarios] = useState([])
     const [dataComunas, setDataComunas] = useState([])
     const [dataSesion, setDataSesion] = useState([])
+
+    const navigate = useNavigate()
 
     //PRODUCTOS
     const getProductos = async () => {
@@ -99,9 +102,14 @@ const Fonda365ContextProvider = ({ children }) => {
             .then((response) => {
                 setDataSesion(response.data)
                 console.log(response.data)
-                console.log(response.data.code)
-                console.log(response.data.message)
-
+                const resultadoData = response.data
+                resultadoData.map((recorre) => {
+                    if (recorre.code != 401) {
+                        alert(recorre.message)
+                    } else {
+                        navigate("/")
+                    }
+                })
             });
         } catch (error) {
             console.log(error);

@@ -89,7 +89,6 @@ app.get("/usuario/autorizacion_usuario", verificacionToken, async (req, res) => 
         const usuario = await obtenerUsuarios(correo)
         res.status(200).json([usuario])        
     } catch (error) {
-        console.log(error.message)
         res.status(error.code || 500).send(error)
     }
 })

@@ -1,18 +1,10 @@
 import React from 'react'
 import { useContext } from 'react';
 import { Fonda365Context } from '../context/Fonda365ContextProvider';
-import { useNavigate } from 'react-router';
 
 const InicioSesion = () => {
 
-    const {iniciarUsuario,dataSesion} = useContext(Fonda365Context)
-
-    const navigate = useNavigate()
-
-    const hClickinisession = (correo,password) => {
-        iniciarUsuario(correo,password)
-        dataSesion  ? navigate("/") : null
-    }
+    const {iniciarUsuario} = useContext(Fonda365Context)
 
     return (
         <div className='col container-fluid d-flex pt-5 ps-5'>
@@ -25,7 +17,7 @@ const InicioSesion = () => {
                     <label className="form-label">Contraseña</label>
                     <input type="password" className="form-control" id="InputPassword" />
                 </div>
-                <button type="button" onClick={() => hClickinisession(document.getElementById("InputEmail").value,
+                <button type="button" onClick={() => iniciarUsuario(document.getElementById("InputEmail").value,
                 document.getElementById("InputPassword").value)} className="btn btn-secondary">Ingresar</button>
             </form>
         </div>
