@@ -100,18 +100,16 @@ const Fonda365ContextProvider = ({ children }) => {
                 headers: {Authorization: `Bearer ${token}`}
             })
             .then((response) => {
-                setDataSesion(response.data)
+                setDataSesion(JSON.parse(response.data))
                 console.log(response.data)
                 const resultadoData = JSON.parse(response.data)
-                resultadoData.map((recorre) => {
-                    console.log("code: " + recorre.code)
-                    console.log("message: " + recorre.message)
-                    if (recorre.code == "401") {
-                        alert(recorre.message)
-                    } else {
-                        navigate("/")
-                    }
-                })
+                console.log("code: " + resultadoData.code)
+                console.log("message: " + resultadoData.message)
+                if (resultadoData.code == "401") {
+                    alert(resultadoData.message)
+                } else {
+                    navigate("/")
+                }
             });
         } catch (error) {
             console.log(error);
