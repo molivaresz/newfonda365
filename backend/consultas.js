@@ -74,12 +74,12 @@ const verificarCredenciales = async (correo, password) => {
     const consulta = 'SELECT * FROM usuario WHERE "Activo" = true and "Correo" = $1'
     const { rows: [usuario], rowCount } = await pool.query(consulta, values)
     if (rowCount === 0) {
-        throw { code: 401, message: "Correo incorrecto" }
+        throw JSON.parse({ code: 401, message: "Correo incorrecto" })
     } else {
         const { Password: passwordEncriptada } = usuario
         const passwordEsCorrecta = bcrypt.compareSync(password, passwordEncriptada)
         if (!passwordEsCorrecta) 
-        throw { code: 401, message: "contraseña incorrecta" }
+        throw JSON.parse({ code: 401, message: "contraseña incorrecta" })
     }
 }
 

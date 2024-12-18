@@ -100,9 +100,9 @@ const Fonda365ContextProvider = ({ children }) => {
                 headers: {Authorization: `Bearer ${token}`}
             })
             .then((response) => {
-                setDataSesion(JSON.parse(response.data))
+                setDataSesion(response.data)
                 console.log(response.data)
-                const resultadoData = JSON.parse(response.data)
+                const resultadoData = response.data
                 console.log("code: " + resultadoData.code)
                 console.log("message: " + resultadoData.message)
                 if (resultadoData.code == "401") {
